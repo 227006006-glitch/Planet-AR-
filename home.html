@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Pembelajaran AR</title>
+
+    <!-- A-Frame & AR.js -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="home-page">
+    <header>
+      <h1>🌞 Dunia Belajar AR 🌈</h1>
+      <p>Arahkan kamera ke marker dan lihat keajaiban muncul!</p>
+    </header>
+
+    <!-- Planet bergerak -->
+    <div class="planet sun"></div>
+    <div class="planet earth"></div>
+    <div class="planet mars"></div>
+    <div class="planet saturn"></div>
+
+    <!-- Tombol -->
+    <div id="buttons">
+      <button onclick="startAR()">▶️ Mulai AR</button>
+      <button onclick="toggleInfo()">ℹ️ Info</button>
+      <button onclick="resetScene()">🔄 Reset</button>
+      <button onclick="captureScene()">📸 Simpan Gambar</button>
+      <button onclick="goToMateri()">📘 Materi</button>
+    </div>
+
+    <!-- Panel Info -->
+    <div id="info">
+      <b>Petunjuk:</b><br />
+      1️⃣ Cetak marker “Hiro” atau tampilkan di layar lain.<br />
+      2️⃣ Arahkan kamera HP ke marker.<br />
+      3️⃣ Tekan “📸 Simpan Gambar” untuk menyimpannya ke galeri! 🌍
+    </div>
+
+    <!-- Kamera Icon -->
+    <img id="camera-icon" src="asset/camera.png" alt="Kamera" />
+
+    <!-- AR Scene -->
+    <div id="capture-area">
+      <a-scene embedded arjs="sourceType: webcam;">
+        <a-marker preset="hiro">
+          <a-box
+            position="0 0.5 0"
+            rotation="0 45 0"
+            color="#4CC3D9"
+            animation="property: rotation; to: 0 405 0; loop: true; dur: 4000"
+            shadow
+          ></a-box>
+          <a-sphere position="1 0.5 0" radius="0.3" color="#EF2D5E"></a-sphere>
+          <a-text
+            value="Halo Dunia AR!"
+            position="-0.7 1 0"
+            color="#FFF"
+          ></a-text>
+        </a-marker>
+        <a-entity camera></a-entity>
+      </a-scene>
+    </div>
+
+    <script>
+      function startAR() {
+        alert("Arahkan kamera ke marker Hiro untuk memulai! 🚀");
+      }
+
+      function toggleInfo() {
+        const info = document.getElementById("info");
+        info.style.display = info.style.display === "none" ? "block" : "none";
+      }
+
+      function resetScene() {
+        location.reload();
+      }
+
+      function captureScene() {
+        const area = document.getElementById("capture-area");
+        html2canvas(area).then((canvas) => {
+          const link = document.createElement("a");
+          link.download = "hasil_AR.png";
+          link.href = canvas.toDataURL("image/png");
+          link.click();
+          alert("Gambar berhasil disimpan! 🖼️");
+        });
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+/* 🌈 RESET UMUM */
+* {
+  box-sizing: border-box;
+  transition: all 0.25s ease-in-out;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🌟 HALAMAN AWAL */
+.start-page {
+  background: linear-gradient(to bottom right, #a2d9ff, #fef9d7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.intro-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+.planet-logo {
+  width: 120px;
+  animation: spin 10s linear infinite;
+}
+
+.start-btn {
+  margin-top: 20px;
+  background-color: #ffb703;
+  border: none;
+  padding: 12px 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 4px #d48b00;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background-color: #f4a261;
+  transform: scale(1.05);
+}
+
+/* 🌞 HALAMAN UTAMA */
+.home-page {
+  background: radial-gradient(circle at bottom, #a2d9ff, #fef9d7);
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  text-align: center;
+  background-color: #ffe76a;
+  color: #3a3a3a;
+  padding: 15px;
+  border-bottom: 5px solid #ffd700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Tombol */
+#buttons {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+button {
+  background: #ffb703;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  margin: 5px;
+  min-width: 120px;
+  padding: 12px 16px;
+  box-shadow: 0 4px #d48b00;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f4a261;
+  transform: scale(1.05);
+}
+
+/* Info Panel */
+#info {
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+  z-index: 4;
+  width: 260px;
+}
+
+/* Kamera Icon */
+#camera-icon {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 70px;
+  animation: float 3s ease-in-out infinite;
+  z-index: 4;
+}
+
+/* Planet Hiasan */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.sun {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #fff176, #fbc02d);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 20s linear infinite;
+}
+
+.earth {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #90e0ef, #0077b6);
+  top: calc(50% - 150px);
+  left: calc(50% - 100px);
+  animation: orbit 12s linear infinite;
+}
+
+.mars {
+  width: 45px;
+  height: 45px;
+  background: radial-gradient(circle, #ffadad, #e63946);
+  top: calc(50% + 100px);
+  left: calc(50% + 120px);
+  animation: orbit 18s linear infinite reverse;
+}
+
+.saturn {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #ffd6a5, #ffb703);
+  top: calc(50% + 50px);
+  left: calc(50% - 180px);
+  animation: orbit 16s linear infinite;
+}
+
+/* 🌌 HALAMAN MATERI */
+.materi-page {
+  background: linear-gradient(to bottom right, #a2d9ff, #fef9d7);
+  color: #333;
+  text-align: center;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.materi-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.planet-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 260px;
+  padding: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.planet-card:hover {
+  transform: scale(1.05);
+}
+
+.planet-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.planet-card h2 {
+  color: #0077b6;
+  margin-bottom: 8px;
+}
+
+.nav-buttons {
+  margin: 15px;
+}
+
+.nav-buttons button {
+  background: #ffb703;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  margin: 5px;
+  padding: 10px 14px;
+  box-shadow: 0 4px #d48b00;
+  cursor: pointer;
+}
+
+.nav-buttons button:hover {
+  background: #f4a261;
+  transform: scale(1.05);
+}
+
+/* 🎬 ANIMASI */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
